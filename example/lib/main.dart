@@ -309,7 +309,8 @@ class _HtmlEditorExampleState extends State<HtmlEditorExample> {
                 controller: controller,
                 htmlEditorOptions: HtmlEditorOptions(
                   hint: 'Your text here...',
-                  shouldEnsureVisible: true,
+                  shouldEnsureVisible: false,
+                  adjustHeightForKeyboard: false,
                   customOptions: '''
                                       popover: {
                                       link: []
@@ -339,7 +340,7 @@ class _HtmlEditorExampleState extends State<HtmlEditorExample> {
                     return true;
                   },
                 ),
-                otherOptions: OtherOptions(height: 550),
+                otherOptions: OtherOptions(height: 32),
                 callbacks: Callbacks(onBeforeCommand: (String? currentHtml) {
                   print('html before change is $currentHtml');
                 }, onChangeContent: (String? changed) {
